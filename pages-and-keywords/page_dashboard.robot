@@ -2,6 +2,7 @@
 Resource                        page_login.robot
 Resource                        client-pages/page_list_client.robot
 Resource                        bedroom-pages/page_list_bedroom.robot
+Resource                        reservation-pages/page_list_reservation.robot
 
 
 *** Variables ***
@@ -43,3 +44,8 @@ Show all bedrooms
     Wait Until Page Contains                 ${bedroomlist_label_clients}
     Title should be                          ${bedroomlist_label_clients}
         
+Show all reservations
+    Page should contain element              ${dashboard_leftmenu_reservation}
+    Click Element                            ${dashboard_leftmenu_reservation}
+    Wait Until Page Contains                 ${bedroomlist_label_clients}
+    Title should be                          ${bedroomlist_label_clients}

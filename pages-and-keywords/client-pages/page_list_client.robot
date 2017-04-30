@@ -1,5 +1,6 @@
 *** Settings ***
 Resource                            page_new_client.robot
+Resource                            ../page_dashboard.robot
 
 *** Variables ***
 ${clientlist_label_clients}           List
@@ -17,11 +18,15 @@ Go to create new client form
     Wait Until Page Contains                 ${clientnew_label_title}
     
 Perform delete client
-
     ${temp_str}=                    Catenate    SEPARATOR=    xpath=//td[text()='    ${client_name_suite}
     ${clientlist_button_delete}=    Catenate    SEPARATOR=    ${temp_str}            ']/following-sibling::td/a[text()='Delete']     
     Click Element                            ${clientlist_button_delete}
     Wait Until Page Contains                 ${clientlist_message_success}     
     Page should not contain                  ${client_name_suite}
+
+Back to dashboard from client list
+    Click Element                            ${clientlist_button_index}
+    Wait Until Page Contains                 ${dashboard_pg_label_dashboard}   
+    
     
             
