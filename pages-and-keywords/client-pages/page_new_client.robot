@@ -15,6 +15,7 @@ ${clientnew_message_success}                Client was successfully created.
 
 *** Keywords ***
 Create new female client
+    #Enter data
     ${client_name}=                          Generate Random String        10        [LOWER]
     ${client_email} =                        Catenate      SEPARATOR=      ${client_name}        @test.com    
     ${client_security_number} =              Generate Random String        7          [NUMBERS]
@@ -23,9 +24,21 @@ Create new female client
     Input text                               ${clientnew_textfield_email}              ${client_email}
     Select checkbox                          ${clientnew_radiobtn_female}
     Input text                               ${clientnew_textfield_social_number}      ${client_security_number}
-
+    #Save and go back to client list
     Click Element                            ${clientnew_button_save} 
     Wait Until Page Contains                 ${clientnew_message_success}     
     Click Element                            ${clientnew_button_show_all_clients}          
     Wait Until Page Contains                 ${clientlist_label_clients}
-    Page should contain                      ${client_name}
+    Page should contain                      ${client_name}    
+    #Save ID for the new client
+    ${client_temp_str}=                      Catenate      SEPARATOR=      xpath=//td[text()='    ${client_name_suite}
+    ${client_temp_str2}=                     Catenate      SEPARATOR=      ${client_temp_str}     ']/preceding-sibling::td[1]
+    ${client_id}=                            Get text      ${client_temp_str2}        
+    Set Suite Variable                       ${client_id_suite}                      ${client_id}       
+    
+
+
+
+
+
+

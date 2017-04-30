@@ -35,4 +35,19 @@ Test5_DeleteClient
     Create new female client
     Perform delete client    
     Perform logout
+
+Test7_CreateNewReservation
+    Login into the system
+    Show all clients
+    Go to create new client form
+    Create new female client
+    Back to dashboard from client list
+    Show all bedrooms
+    Go to create new bedroom form
+    Create new bedroom Top Bed King Vacant
+    Back to dashboard from bedroom list
+    Show all reservations
+    Go to create new reservation form
+    Create new confirmed reservation
+    Perform logout
     
