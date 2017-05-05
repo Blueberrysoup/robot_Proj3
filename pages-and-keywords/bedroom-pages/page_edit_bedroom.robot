@@ -8,7 +8,7 @@ Library                                     String
 ${bedroom_label_title}                       Edit Bedroom
 ${bedroom_textfield_description}             id=description 
 ${bedroom_button_save}                       xpath=//a[@class='btn btn-primary']
-${bedroom_button_show_all_clients}           xpath=//a[text()='Show All Bedrooms']
+${bedroom_button_show_all_bedrooms}           xpath=//a[text()='Show All Bedrooms']
 ${bedroom_message_success}                   Bedroom was successfully updated.
 
 
@@ -23,7 +23,7 @@ Edit bedroom name
     Input text                               ${bedroom_textfield_description}           ${room_name_edit}                            
     Click Element                            ${bedroom_button_save}  
     Wait Until Page Contains                 ${bedroom_message_success} 
-    Click Element                            ${bedroom_button_show_all_clients}  
-    Wait Until Page Contains                 ${bedroomlist_label_clients}
+    Click Element                            ${bedroom_button_show_all_bedrooms}  
+    Wait Until Page Contains                 ${bedroomlist_label}
     Page Should Contain                      ${room_name_edit}
     

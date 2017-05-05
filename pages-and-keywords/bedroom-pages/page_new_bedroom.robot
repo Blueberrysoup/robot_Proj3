@@ -5,7 +5,7 @@ Library                                     String
 *** Variables ***
 ${bedroomnew_label_title}                    Create New Bedroom
 ${bedroomnew_button_save}                    xpath=//a[@class='btn btn-primary']
-${bedroomnew_button_show_all_clients}        xpath=//a[text()='Show All Bedrooms']
+${bedroomnew_button_show_all_bedrooms}        xpath=//a[text()='Show All Bedrooms']
 ${bedroomnew_message_success}                Bedroom was successfully created.
 
 ${bedroomnew_textfield_description}          id=description
@@ -38,8 +38,8 @@ Create new bedroom Top Bed King Vacant
     #Save and go back to bedroom list
     Click Element                            ${bedroomnew_button_save}
     Wait Until Page Contains                 ${bedroomnew_message_success}
-    Click Element                            ${bedroomnew_button_show_all_clients}   
-    Wait Until Page Contains                 ${bedroomlist_label_clients}
+    Click Element                            ${bedroomnew_button_show_all_bedrooms}   
+    Wait Until Page Contains                 ${bedroomlist_label}
     Page should contain                      ${room_name}     
     #Save ID for the new bedroom
     ${bedroom_temp_str}=                     Catenate      SEPARATOR=      xpath=//td[text()='        ${room_name_suite}
