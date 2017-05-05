@@ -1,13 +1,12 @@
 *** Settings ***
-Resource                                    page_list_reservation.robot
+Resource                                    page_list_bill.robot
 Library                                     String
-Library                                     DateTime 
+
 
 *** Variables ***
-${bill_button_left}                         xpath=//*[@id='side-menu']/li[4]/a
-${create_new_bill_button}                   xpath=//a[@class='btn btn-primary']
-${save_new_bill_button}                     xpath=//a[@class='btn btn-primary']
 ${billnew_label_title}                      Create New Bill
+${save_new_bill_button}                     xpath=//a[@class='btn btn-primary']
+
 
 ${billnew_select_status}                    id=j_idt50:billStatusId
 ${billnew_select_type}                      id=j_idt50:hotelReservationId
@@ -26,8 +25,6 @@ ${billnew_str}                              xpath=//*[@id='j_idt50']/table/tbody
 
 *** Keywords ***
 Create new bill
-    Click Element                            ${bill_button_left}
-    Wait Until Page Contains                 ${reservationlist_label_clients} 
     Click Element                            ${create_new_bill_button}
     Wait Until Page Contains                 ${billnew_label_title} 
     Select From List By Value                ${billnew_select_status}              ${billnew_option_status_pay}
