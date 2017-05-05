@@ -2,7 +2,7 @@
 Resource                            page_new_reservation.robot
 
 *** Variables ***
-${reservationlist_label_clients}           List
+${reservationlist_label}                   List
 
 ${reservationlist_button_createnew}        xpath=//a[@class='btn btn-primary']
 ${reservationlist_button_index}            xpath=//a[@class='btn btn-default']

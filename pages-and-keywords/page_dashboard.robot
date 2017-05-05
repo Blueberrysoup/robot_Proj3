@@ -44,19 +44,19 @@ Show all clients
 Show all bedrooms
     Page should contain element              ${dashboard_show_all_bedrooms}
     Click Element                            ${dashboard_show_all_bedrooms}
-    Wait Until Page Contains                 ${bedroomlist_label_clients}
-    Title should be                          ${bedroomlist_label_clients}
+    Wait Until Page Contains                 ${bedroomlist_label}
+    Title should be                          ${bedroomlist_label}
         
 Show all reservations
     Page should contain element              ${dashboard_leftmenu_reservation}
     Click Element                            ${dashboard_leftmenu_reservation}
-    Wait Until Page Contains                 ${bedroomlist_label_clients}
-    Title should be                          ${bedroomlist_label_clients}
+    Wait Until Page Contains                 ${reservationlist_label}
+    Title should be                          ${reservationlist_label}
 
 Show all bills
     Page should contain element              ${dashboard_leftmenu_bill}
     Click Element                            ${dashboard_leftmenu_bill}
-    Wait Until Page Contains                 ${reservationlist_label_bills} 
-    Title should be                          ${reservationlist_label_bills} 
+    Wait Until Page Contains                 ${billist_label_bills} 
+    Title should be                          ${billist_label_bills} 
     
     

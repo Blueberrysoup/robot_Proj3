@@ -42,7 +42,7 @@ Create new confirmed reservation
     Click Element                            ${reservationnew_button_save} 
     Wait Until Page Contains                 ${reservationnew_message_success}     
     Click Element                            ${reservationnew_button_show_all_reservations}   
-    Wait Until Page Contains                 ${reservationlist_label_clients}
+    Wait Until Page Contains                 ${reservationlist_label}
     Page should contain                      ${room_name_suite}
     Page should contain                      ${room_floor_suite}
     Page should contain                      ${room_number_suite}
