@@ -5,10 +5,14 @@ Resource                        ./pages-and-keywords/test_setup_and_teardown.rob
 Resource                        ./pages-and-keywords/page_login.robot
 Resource                        ./pages-and-keywords/page_dashboard.robot
 Resource                        ./pages-and-keywords/client-pages/page_list_client.robot
+Resource                        ./pages-and-keywords/client-pages/page_new_client.robot
 Resource                        ./pages-and-keywords/bedroom-pages/page_edit_bedroom.robot
 Resource                        ./pages-and-keywords/bedroom-pages/page_list_bedroom.robot
 Resource                        ./pages-and-keywords/bedroom-pages/page_new_bedroom.robot
-Resource                        ./pages-and-keywords/reservation-pages/page_new_bill.robot
+Resource                        ./pages-and-keywords/reservation-pages/page_list_reservation.robot
+Resource                        ./pages-and-keywords/reservation-pages/page_new_reservation.robot
+Resource                        ./pages-and-keywords/bill-pages/page_list_bill.robot
+Resource                        ./pages-and-keywords/bill-pages/page_new_bill.robot
 
 Test setup                      Setup
 Test Teardown                   Teardown
@@ -34,6 +38,8 @@ Test3_CreateNewClient
 
 Test4_CreateNewBill
     Login into the system
+    Show all bills
+    Go to create new bill
     Create new bill
     Perform logout
     

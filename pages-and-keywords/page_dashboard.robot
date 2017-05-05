@@ -3,6 +3,7 @@ Resource                        page_login.robot
 Resource                        client-pages/page_list_client.robot
 Resource                        bedroom-pages/page_list_bedroom.robot
 Resource                        reservation-pages/page_list_reservation.robot
+Resource                        bill-pages/page_list_bill.robot
 
 
 *** Variables ***
@@ -21,6 +22,8 @@ ${dashboard_leftmenu_bedrooms}            xpath=//i[@class='glyphicon glyphicon-
 ${dashboard_leftmenu_bill}                xpath=//i[@class='fa fa-credit-card fa-fw']
 ${dashboard_leftmenu_client}              xpath=//i[@class='fa fa-male fa-fw']
 ${dashboard_leftmenu_reservation}         xpath=//i[@class='fa fa-university fa-fw']
+
+${dashboard_leftmenu_bill}                xpath=//*[@id='side-menu']/li[4]/a
 
 
 *** Keywords ***
@@ -49,3 +52,11 @@ Show all reservations
     Click Element                            ${dashboard_leftmenu_reservation}
     Wait Until Page Contains                 ${bedroomlist_label_clients}
     Title should be                          ${bedroomlist_label_clients}
+
+Show all bills
+    Page should contain element              ${dashboard_leftmenu_bill}
+    Click Element                            ${dashboard_leftmenu_bill}
+    Wait Until Page Contains                 ${reservationlist_label_bills} 
+    Title should be                          ${reservationlist_label_bills} 
+    
+    
